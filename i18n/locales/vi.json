@@ -1,0 +1,137 @@
+{
+  "site": {
+    "title": "KCIS",
+    "description": "Trang web doanh nghiệp KCIS",
+    "keywords": "KCIS, Dịch vụ chuyên nghiệp, Dự án kỹ thuật, Giải pháp doanh nghiệp",
+    "readMore": "Đọc thêm",
+    "learnMore": "Tìm hiểu thêm",
+    "contactUs": "Liên hệ với chúng tôi"
+  },
+  "nav": {
+    "home": "Trang chủ",
+    "about": "Về chúng tôi",
+    "services": "Dịch vụ",
+    "projects": "Dự án",
+    "info": "Trung tâm thông tin",
+    "careers": "Tuyển dụng",
+    "contact": "Liên hệ"
+  },
+  "home": {
+    "banner": "Nhà cung cấp giải pháp chuyên nghiệp",
+    "aboutSection": "Về chúng tôi",
+    "serviceSection": "Dịch vụ của chúng tôi",
+    "projectSection": "Câu chuyện thành công",
+    "contactSection": "Liên hệ với chúng tôi",
+    "companyDescription": "KCIS là một công ty chuyên nghiệp cung cấp dịch vụ và giải pháp chất lượng cao.",
+    "viewAllServices": "Xem tất cả dịch vụ",
+    "viewAllProjects": "Xem tất cả dự án",
+    "contactInfo": "Thông tin liên hệ",
+    "contactDescription": "Hãy liên hệ với chúng tôi bất cứ lúc nào để tìm hiểu thêm hoặc nhận tư vấn chuyên nghiệp"
+  },
+  "about": {
+    "banner": "Tìm hiểu về lịch sử phát triển và sứ mệnh của KCIS",
+    "companyIntro": "Giới thiệu công ty",
+    "vision": "Tầm nhìn của chúng tôi",
+    "mission": "Sứ mệnh của chúng tôi",
+    "values": "Giá trị cốt lõi",
+    "history": "Lịch sử phát triển",
+    "team": "Đội ngũ chính"
+  },
+  "services": {
+    "banner": "Chúng tôi cung cấp dịch vụ chuyên nghiệp và hiệu quả cho khách hàng",
+    "introduction": "KCIS cung cấp nhiều dịch vụ chuyên nghiệp để đáp ứng mọi nhu cầu của bạn.",
+    "process": "Quy trình dịch vụ",
+    "whyChooseUs": "Tại sao chọn chúng tôi",
+    "needService": "Cần dịch vụ chuyên nghiệp?",
+    "consultNow": "Tư vấn ngay"
+  },
+  "projects": {
+    "banner": "Các dự án kỹ thuật hoàn thành thành công của chúng tôi",
+    "categories": {
+      "all": "Tất cả",
+      "commercial": "Tòa nhà thương mại",
+      "industrial": "Tòa nhà công nghiệp",
+      "residential": "Tòa nhà dân cư",
+      "renovation": "Cải tạo tòa nhà",
+      "special": "Tòa nhà đặc biệt",
+      "public": "Tòa nhà công cộng"
+    },
+    "details": "Xem chi tiết",
+    "clientReviews": "Đánh giá của khách hàng",
+    "needService": "Cần dịch vụ chuyên nghiệp của chúng tôi?",
+    "letsTalk": "Hãy thảo luận về yêu cầu dự án của bạn"
+  },
+  "info": {
+    "banner": "Cập nhật tin tức mới nhất và thông tin ngành của KCIS",
+    "categories": {
+      "all": "Tất cả",
+      "companyNews": "Tin tức công ty",
+      "projectNews": "Tin tức dự án",
+      "technicalArticles": "Bài viết kỹ thuật",
+      "industryTrends": "Xu hướng ngành",
+      "events": "Sự kiện",
+      "partners": "Đối tác"
+    },
+    "readMore": "Đọc thêm",
+    "subscribe": "Đăng ký nhận bản tin",
+    "subscribeDescription": "Đăng ký nhận bản tin của KCIS để cập nhật tin tức công ty, xu hướng ngành và thông tin kỹ thuật mới nhất.",
+    "resourceCenter": "Trung tâm tài nguyên",
+    "whitePapers": "Báo cáo nghiên cứu",
+    "caseStudies": "Nghiên cứu trường hợp",
+    "videos": "Video",
+    "faq": "Câu hỏi thường gặp"
+  },
+  "careers": {
+    "banner": "Hãy tham gia KCIS và bắt đầu chương mới trong sự nghiệp của bạn",
+    "culture": "Văn hóa của chúng tôi",
+    "benefits": "Phúc lợi nhân viên",
+    "openings": "Vị trí tuyển dụng",
+    "jobTypes": {
+      "all": "Tất cả",
+      "fullTime": "Toàn thời gian",
+      "partTime": "Bán thời gian",
+      "internship": "Thực tập"
+    },
+    "applicationProcess": "Quy trình ứng tuyển",
+    "joinUs": "Sẵn sàng tham gia cùng chúng tôi?",
+    "browsePositions": "Xem các vị trí",
+    "contactRecruitment": "Liên hệ đội tuyển dụng"
+  },
+  "contact": {
+    "banner": "Chúng tôi mong được nghe từ bạn",
+    "info": "Thông tin liên hệ",
+    "address": "Địa chỉ văn phòng",
+    "email": "Email",
+    "phone": "Điện thoại",
+    "workingHours": "Giờ làm việc",
+    "messageForm": "Để lại tin nhắn",
+    "formLabels": {
+      "name": "Tên",
+      "email": "Email",
+      "phone": "Điện thoại",
+      "subject": "Chủ đề",
+      "message": "Tin nhắn",
+      "submit": "Gửi"
+    },
+    "successMessage": "Cảm ơn tin nhắn của bạn! Chúng tôi sẽ liên hệ lại sớm.",
+    "errorMessage": "Gửi thất bại, vui lòng thử lại sau.",
+    "faq": "Câu hỏi thường gặp"
+  },
+  "footer": {
+    "quickLinks": "Liên kết nhanh",
+    "contact": "Liên hệ với chúng tôi",
+    "copyright": "© 2025 KCIS. Tất cả các quyền được bảo lưu."
+  },
+  "lang": {
+    "title": "Lựa chọn ngôn ngữ",
+    "zh-Hant": "繁體中文",
+    "en": "English",
+    "vi": "Tiếng Việt"
+  },
+  "common": {
+    "loading": "Đang tải...",
+    "error": "Đã xảy ra lỗi",
+    "retry": "Thử lại",
+    "close": "Đóng"
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "site": {
+    "title": "KCIS",
+    "description": "KCIS 企業形象網站",
+    "keywords": "KCIS, 專業服務, 工程實績, 企業解決方案",
+    "readMore": "閱讀更多",
+    "learnMore": "了解更多",
+    "contactUs": "聯繫我們"
+  },
+  "nav": {
+    "home": "首頁",
+    "about": "關於我們",
+    "services": "服務項目",
+    "projects": "工程實績",
+    "info": "資訊中心",
+    "careers": "企業徵才",
+    "contact": "聯絡我們"
+  },
+  "home": {
+    "banner": "專業解決方案提供者",
+    "aboutSection": "關於我們",
+    "serviceSection": "我們的服務",
+    "projectSection": "成功案例",
+    "contactSection": "聯繫我們",
+    "companyDescription": "KCIS是一家專業的企業，提供高品質的服務和解決方案。",
+    "viewAllServices": "查看所有服務",
+    "viewAllProjects": "查看所有項目",
+    "contactInfo": "聯繫信息",
+    "contactDescription": "隨時聯繫我們，了解更多信息或獲取專業建議"
+  },
+  "about": {
+    "banner": "了解KCIS的發展歷程和企業使命",
+    "companyIntro": "公司簡介",
+    "vision": "我們的願景",
+    "mission": "我們的使命",
+    "values": "核心價值觀",
+    "history": "發展歷程",
+    "team": "核心團隊"
+  },
+  "services": {
+    "banner": "我們為客戶提供專業、高效的服務",
+    "introduction": "KCIS提供多樣化的專業服務，以滿足客戶的各種需求。",
+    "process": "服務流程",
+    "whyChooseUs": "為什麼選擇我們",
+    "needService": "需要專業服務？",
+    "consultNow": "立即諮詢"
+  },
+  "projects": {
+    "banner": "我們成功完成的工程實績案例",
+    "categories": {
+      "all": "全部",
+      "commercial": "商業建築",
+      "industrial": "工業建築",
+      "residential": "住宅建築",
+      "renovation": "建築翻新",
+      "special": "特殊建築",
+      "public": "公共建築"
+    },
+    "details": "查看詳情",
+    "clientReviews": "客戶評價",
+    "needService": "需要我們的專業服務？",
+    "letsTalk": "讓我們一起討論您的項目需求"
+  },
+  "info": {
+    "banner": "了解KCIS的最新動態和行業資訊",
+    "categories": {
+      "all": "全部",
+      "companyNews": "公司新聞",
+      "projectNews": "項目新聞",
+      "technicalArticles": "技術文章",
+      "industryTrends": "行業趨勢",
+      "events": "活動新聞",
+      "partners": "合作夥伴"
+    },
+    "readMore": "閱讀更多",
+    "subscribe": "訂閱我們的資訊",
+    "subscribeDescription": "訂閱KCIS的電子通訊，獲取最新的公司動態、行業趨勢和技術資訊。",
+    "resourceCenter": "資源中心",
+    "whitePapers": "技術白皮書",
+    "caseStudies": "案例研究",
+    "videos": "視頻資料",
+    "faq": "常見問題"
+  },
+  "careers": {
+    "banner": "加入KCIS，開啟您的職業新篇章",
+    "culture": "我們的文化",
+    "benefits": "員工福利",
+    "openings": "職位空缺",
+    "jobTypes": {
+      "all": "全部",
+      "fullTime": "全職",
+      "partTime": "兼職",
+      "internship": "實習"
+    },
+    "applicationProcess": "應聘流程",
+    "joinUs": "準備好加入我們了嗎？",
+    "browsePositions": "瀏覽職位",
+    "contactRecruitment": "聯繫招聘團隊"
+  },
+  "contact": {
+    "banner": "我們期待聽到您的聲音",
+    "info": "聯絡資訊",
+    "address": "辦公地址",
+    "email": "電子郵件",
+    "phone": "電話",
+    "workingHours": "營業時間",
+    "messageForm": "給我們留言",
+    "formLabels": {
+      "name": "姓名",
+      "email": "電子郵件",
+      "phone": "電話",
+      "subject": "主題",
+      "message": "訊息",
+      "submit": "提交"
+    },
+    "successMessage": "謝謝您的訊息！我們會盡快回覆您。",
+    "errorMessage": "提交失敗，請稍後再試。",
+    "faq": "常見問題"
+  },
+  "footer": {
+    "quickLinks": "快速鏈接",
+    "contact": "聯繫我們",
+    "copyright": "© 2025 KCIS. 版權所有。"
+  },
+  "lang": {
+    "title": "語言選擇",
+    "zh-Hant": "繁體中文",
+    "en": "English",
+    "vi": "Tiếng Việt"
+  },
+  "common": {
+    "loading": "載入中...",
+    "error": "發生錯誤",
+    "retry": "重試",
+    "close": "關閉"
+  }
+}
