@@ -7,7 +7,7 @@ import NavFooter from '~/components/layout/NavFooter.vue'
 <template>
   <div class="min-h-screen flex flex-col">
     <NavHeader />
-    <main class="flex-grow">
+    <main class="flex-grow pt-16 md:pt-24">
       <slot />
     </main>
     <NavFooter />

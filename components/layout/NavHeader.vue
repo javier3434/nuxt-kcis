@@ -4,6 +4,7 @@ import logoVi from '~/assets/images/logo-vi.JPG'
 
 const { locale, locales } = useI18n()
 const switchLocalePath = useSwitchLocalePath()
+const localePath = useLocalePath()
 const route = useRoute()
 
 const isMenuOpen = ref(false)
@@ -40,13 +41,13 @@ onUnmounted(() => {
 })
 
 const navItems = computed(() => [
-  { name: 'nav.home', path: '/', active: route.path === '/' },
-  { name: 'nav.about', path: '/about', active: route.path.startsWith('/about') },
-  { name: 'nav.services', path: '/services', active: route.path.startsWith('/services') },
-  { name: 'nav.projects', path: '/projects', active: route.path.startsWith('/projects') },
-  { name: 'nav.info', path: '/info', active: route.path.startsWith('/info') },
-  { name: 'nav.careers', path: '/careers', active: route.path.startsWith('/careers') },
-  { name: 'nav.contact', path: '/contact', active: route.path.startsWith('/contact') },
+  { name: 'nav.home', path: localePath('/'), active: route.path === localePath('/') },
+  { name: 'nav.about', path: localePath('/about'), active: route.path.startsWith(localePath('/about')) },
+  // { name: 'nav.services', path: localePath('/services'), active: route.path.startsWith(localePath('/services')) },
+  // { name: 'nav.projects', path: localePath('/projects'), active: route.path.startsWith(localePath('/projects')) },
+  // { name: 'nav.info', path: localePath('/info'), active: route.path.startsWith(localePath('/info')) },
+  // { name: 'nav.careers', path: localePath('/careers'), active: route.path.startsWith(localePath('/careers')) },
+  { name: 'nav.contact', path: localePath('/contact'), active: route.path.startsWith(localePath('/contact')) },
 ])
 
 const availableLocales = computed(() => {
@@ -68,7 +69,7 @@ const currentLogo = computed(() => {
 </script>
 
 <template>
-  <header class="bg-white shadow-sm">
+  <header class="bg-white shadow-sm !fixed !top-0 !left-0 !right-0 !z-50">
     <div class="container mx-auto py-0 px-4 md:px-0">
       <div class="flex justify-between items-center">
         <!-- Logo -->

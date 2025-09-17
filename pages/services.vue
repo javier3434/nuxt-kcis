@@ -5,7 +5,24 @@ definePageMeta({
 useHead({
   title: useI18n().t('nav.services')
 })
-
+// 导航菜单数据
+const navigationItems = [
+  {
+    id: "company-story",
+    title: "公司創立故事",
+    icon: "i-heroicons-sparkles",
+  },
+  {
+    id: "company-history",
+    title: "公司成立史",
+    icon: "i-heroicons-clock",
+  },
+  {
+    id: "team-introduction",
+    title: "團隊介紹",
+    icon: "i-heroicons-user-group",
+  },
+];
 // 服务项目数据
 const services = [
   {
@@ -80,7 +97,184 @@ const processes = [
         <p class="text-xl text-gray-600">我們為客戶提供專業、高效的服務</p>
       </div>
     </section>
+    <!-- 主要内容区域 - 左右布局 -->
+    <section class="py-8">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col lg:flex-row gap-8">
+          <!-- 左侧固定导航菜单 -->
+          <aside class="lg:w-1/4 lg:sticky lg:top-28 lg:self-start">
+            <div class="bg-white rounded-lg shadow-md p-6">
+              <!-- <h3 class="text-lg font-bold mb-6 text-gray-800">導航菜單</h3> -->
+              <nav class="space-y-2">
+                <button
+                  v-for="item in navigationItems"
+                  :key="item.id"
+                  @click="scrollToSection(item.id)"
+                  class="w-full flex items-center px-4 py-3 text-left rounded-lg transition-colors group"
+                  :class="
+                    activeSection === item.id
+                      ? 'bg-red-600 text-white'
+                      : 'hover:bg-red-50 hover:text-red-600'
+                  "
+                >
+                  <UIcon
+                    :name="item.icon"
+                    class="w-5 h-5 mr-3 transition-colors"
+                    :class="
+                      activeSection === item.id
+                        ? 'text-white'
+                        : 'text-gray-400 group-hover:text-red-600'
+                    "
+                  />
+                  <span class="font-medium">{{ item.title }}</span>
+                </button>
+              </nav>
+            </div>
+          </aside>
 
+          <!-- 右侧内容区域 -->
+          <main class="lg:w-3/4">
+            <div class="space-y-16">
+              <!-- 公司创立故事 -->
+              <section id="company-story" class="scroll-mt-8">
+                <div class="bg-white rounded-lg shadow-md p-8">
+                  <h2
+                    class="text-3xl font-bold mb-8 text-gray-800 flex items-center"
+                  >
+                    <UIcon
+                      name="i-heroicons-sparkles"
+                      class="w-8 h-8 mr-3 text-red-600"
+                    />
+                    公司創立故事
+                  </h2>
+
+                  <div class="prose prose-lg max-w-none">
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                      創辦人的話：
+                    </p>
+
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                      KCIS 的誕生創立 KCIS，不是為了趕上市場，而是為了改變它。
+                      我長期走在越南各地的工地與會議室之間，看到無數建築拔地而起，也看到太多品質失控、責任模糊、角色被邊緣化的工程現場。圖紙與現場不符，預算不透明，監造成了「在不在都一樣」的裝飾。
+                    </p>
+
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                      我常想，這真的是工程應有的樣子嗎？
+                      我問自己：「如果我們能堅持把每件事做對，會不會讓工程變得不一樣？」
+                      這個念頭，成為我創立 KCIS 的起點。
+                      我們相信，品質不是用錢堆出來的，而是來自
+                      堅持（Keep）——對細節的堅持、對原則的堅持。我們也相信，監造人不能只是站在一邊看，而要有
+                      自信（Confidence）
+                      提出專業判斷，甚至幫助業主做決定。在這個變化快速的時代，我們更不能墨守成規，創新（Innovation）
+                      是我們與錯誤對抗的工具。而一切的核心，都是為了
+                      服務（Server）——服務業主、服務建築本身，也服務未來可能在這棟建築裡生活、工作的人。
+                    </p>
+
+                    <p class="text-gray-700 mb-6 leading-relaxed">
+                      KCIS
+                      是這四個詞的縮寫，也是一種信念的縮寫。KCIS，不追求最大，但我們選擇最正直的那條路。用四個字——Keep,
+                      Confidence, Innovation,
+                      Serve，我們蓋出每一個值得信任的工程。
+                    </p>
+                    <p>KCIS 創辦人楊博翔 Ennio</p>
+                  </div>
+                </div>
+              </section>
+
+              <!-- 公司成立史 -->
+              <section id="company-history" class="scroll-mt-8">
+                <div class="bg-white rounded-lg shadow-md p-8">
+                  <h2
+                    class="text-3xl font-bold mb-8 text-gray-800 flex items-center"
+                  >
+                    <UIcon
+                      name="i-heroicons-clock"
+                      class="w-8 h-8 mr-3 text-red-600"
+                    />
+                    公司成立史
+                  </h2>
+
+                  <div class="space-y-8">
+                    <div
+                      v-for="(milestone, index) in milestones"
+                      :key="index"
+                      class="flex items-start"
+                    >
+                      <div class="flex-shrink-0 w-20 text-center mr-6">
+                        <div
+                          class="bg-red-600 text-white rounded-full w-16 h-16 flex items-center justify-center font-bold text-sm mx-auto mb-2"
+                        >
+                          {{ milestone.year }}
+                        </div>
+                        <div
+                          v-if="index < milestones.length - 1"
+                          class="w-px h-16 bg-gray-300 mx-auto"
+                        ></div>
+                      </div>
+                      <div class="flex-grow">
+                        <div class="bg-gray-50 p-6 rounded-lg">
+                          <h3 class="text-xl font-bold mb-3 text-gray-800">
+                            {{ milestone.title }}
+                          </h3>
+                          <p class="text-gray-700 leading-relaxed">
+                            {{ milestone.description }}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <!-- 团队介绍 -->
+              <section id="team-introduction" class="scroll-mt-8">
+                <div class="bg-white rounded-lg shadow-md p-8">
+                  <h2
+                    class="text-3xl font-bold mb-8 text-gray-800 flex items-center"
+                  >
+                    <UIcon
+                      name="i-heroicons-user-group"
+                      class="w-8 h-8 mr-3 text-red-600"
+                    />
+                    團隊介紹
+                  </h2>
+
+                  <div
+                    class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6"
+                  >
+                    <div
+                      v-for="(member, index) in team"
+                      :key="index"
+                      class="bg-gray-50 rounded-lg overflow-hidden hover:shadow-md transition-shadow"
+                    >
+                      <div
+                        class="h-48 bg-gray-200 flex items-center justify-center"
+                      >
+                        <UIcon
+                          name="i-heroicons-user-circle"
+                          class="w-16 h-16 text-gray-400"
+                        />
+                      </div>
+                      <div class="p-6">
+                        <h3 class="text-lg font-bold mb-2 text-gray-800">
+                          {{ member.name }}
+                        </h3>
+                        <p class="text-red-600 font-medium mb-3 text-sm">
+                          職位: {{ member.title }}
+                        </p>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                          專長: {{ member.description }}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </main>
+        </div>
+      </div>
+    </section>
     <!-- 服务简介 -->
     <section class="py-16">
       <div class="container mx-auto px-4">
@@ -195,7 +389,7 @@ const processes = [
     </section>
 
     <!-- 咨询服务 -->
-    <section class="py-16 bg-gray-50">
+    <!-- <section class="py-16 bg-gray-50">
       <div class="container mx-auto px-4 text-center">
         <h2 class="text-3xl font-bold mb-6">需要專業服務？</h2>
         <p class="text-xl text-gray-600 mb-8">聯繫我們，了解更多關於我們服務的信息</p>
@@ -203,6 +397,6 @@ const processes = [
           立即諮詢
         </NuxtLink>
       </div>
-    </section>
+    </section> -->
   </div>
 </template>

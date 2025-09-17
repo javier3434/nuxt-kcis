@@ -64,5 +64,8 @@ export default defineNuxtConfig({
         { rel: 'icon', type: 'image/png', href: '/favicon.png' }
       ]
     }
-  }
+  },
+  
+  // 禁用 SPA loading template (hydration 前的加载屏幕)
+  // spaLoadingTemplate: false
 })

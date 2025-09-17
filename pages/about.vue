@@ -163,7 +163,7 @@ onUnmounted(() => {
       <div class="container mx-auto px-4">
         <div class="flex flex-col lg:flex-row gap-8">
           <!-- 左侧固定导航菜单 -->
-          <aside class="lg:w-1/4 lg:sticky lg:top-8 lg:self-start">
+          <aside class="lg:w-1/4 lg:sticky lg:top-28 lg:self-start">
             <div class="bg-white rounded-lg shadow-md p-6">
               <!-- <h3 class="text-lg font-bold mb-6 text-gray-800">導航菜單</h3> -->
               <nav class="space-y-2">

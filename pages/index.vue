@@ -169,7 +169,7 @@ const projects = [
               <div class="space-y-4">
                 <p class="flex items-start">
                   <Icon name="heroicons:map-pin" class="mr-3 w-5 h-5 text-red-600 mt-1" />
-                  <span>香港九龍灣企業廣場123號</span>
+                  <span>越南九龍灣企業廣場123號</span>
                 </p>
                 <p class="flex items-start">
                   <Icon name="heroicons:phone" class="mr-3 w-5 h-5 text-red-600 mt-1" />

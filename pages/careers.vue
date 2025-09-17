@@ -13,7 +13,7 @@ const jobs = [
     title: '高級工程師',
     department: '工程部',
     type: '全職',
-    location: '香港',
+    location: '越南',
     description: '負責複雜工程項目的設計、實施和管理，提供專業技術支持和解決方案。',
     requirements: [
       '相關專業學士學位或以上學歷',
@@ -34,7 +34,7 @@ const jobs = [
     title: '項目經理',
     department: '項目管理部',
     type: '全職',
-    location: '香港',
+    location: '越南',
     description: '負責管理和協調工程項目，確保項目按時、按質、按預算完成。',
     requirements: [
       '項目管理相關學位',
@@ -55,7 +55,7 @@ const jobs = [
     title: '市場專員',
     department: '市場部',
     type: '全職',
-    location: '香港',
+    location: '越南',
     description: '負責市場推廣活動的策劃和執行，提升公司品牌知名度和市場份額。',
     requirements: [
       '市場營銷或相關專業學位',
@@ -76,12 +76,12 @@ const jobs = [
     title: '人力資源專員',
     department: '人力資源部',
     type: '全職',
-    location: '香港',
+    location: '越南',
     description: '負責招聘、培訓、績效管理等人力資源工作，支持公司人才發展策略。',
     requirements: [
       '人力資源管理或相關專業學位',
       '2年以上人力資源工作經驗',
-      '熟悉香港勞工法規',
+      '熟悉越南勞工法規',
       '良好的組織和協調能力',
       '優秀的人際交往能力'
     ],
@@ -97,7 +97,7 @@ const jobs = [
     title: '財務助理',
     department: '財務部',
     type: '全職',
-    location: '香港',
+    location: '越南',
     description: '協助財務團隊處理日常財務工作，包括記賬、報表編製、發票處理等。',
     requirements: [
       '會計或財務相關專業學位',
@@ -118,7 +118,7 @@ const jobs = [
     title: '技術支持實習生',
     department: '技術部',
     type: '實習',
-    location: '香港',
+    location: '越南',
     description: '協助技術團隊處理日常工作，參與項目實施，獲取實際工作經驗。',
     requirements: [
       '相關專業在讀學生',
@@ -315,9 +315,9 @@ const filteredJobs = computed(() => {
               </ul>
             </div>
             
-            <button class="bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded-md transition-colors">
+            <!-- <button class="bg-red-600 hover:bg-red-700 text-white font-medium py-2 px-4 rounded-md transition-colors">
               立即應聘
-            </button>
+            </button> -->
           </div>
         </div>
       </div>
@@ -416,14 +416,6 @@ const filteredJobs = computed(() => {
         <p class="text-xl text-gray-600 mb-8">
           探索KCIS的職業機會，開啟您的專業發展之旅
         </p>
-        <div class="flex justify-center">
-          <a href="#" class="bg-red-600 hover:bg-red-700 text-white font-medium py-3 px-8 rounded-md transition-colors inline-block mr-4">
-            瀏覽職位
-          </a>
-          <a href="#" class="border border-red-600 text-red-600 hover:bg-red-50 font-medium py-3 px-8 rounded-md transition-colors inline-block">
-            聯繫招聘團隊
-          </a>
-        </div>
       </div>
     </section>
   </div>

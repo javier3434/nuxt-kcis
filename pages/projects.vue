@@ -10,10 +10,10 @@ useHead({
 const projects = [
   {
     id: 1,
-    title: '香港中心商業大廈項目',
+    title: '越南中心商業大廈項目',
     category: '商業建築',
     year: '2023',
-    location: '香港中環',
+    location: '越南中環',
     description: '為知名商業大廈提供全面的工程服務，包括系統升級和優化，提升建築整體運營效率。',
     image: '/placeholder-project.jpg',
     highlights: [
@@ -27,7 +27,7 @@ const projects = [
     title: '九龍灣科技園區開發',
     category: '工業建築',
     year: '2022',
-    location: '香港九龍灣',
+    location: '越南九龍灣',
     description: '參與九龍灣科技園區的規劃和開發，提供專業技術支持和項目管理服務。',
     image: '/placeholder-project.jpg',
     highlights: [
@@ -41,7 +41,7 @@ const projects = [
     title: '沙田住宅社區項目',
     category: '住宅建築',
     year: '2021',
-    location: '香港沙田',
+    location: '越南沙田',
     description: '為大型住宅社區提供全面的工程諮詢和服務，確保項目符合現代生活標準和環保要求。',
     image: '/placeholder-project.jpg',
     highlights: [
@@ -55,7 +55,7 @@ const projects = [
     title: '中環辦公樓翻新工程',
     category: '建築翻新',
     year: '2020',
-    location: '香港中環',
+    location: '越南中環',
     description: '為歷史悠久的辦公樓進行全面翻新，保留建築特色的同時提升現代功能和效率。',
     image: '/placeholder-project.jpg',
     highlights: [
@@ -69,7 +69,7 @@ const projects = [
     title: '將軍澳數據中心建設',
     category: '特殊建築',
     year: '2019',
-    location: '香港將軍澳',
+    location: '越南將軍澳',
     description: '參與大型數據中心的建設項目，提供專業技術方案和系統集成服務。',
     image: '/placeholder-project.jpg',
     highlights: [
@@ -83,7 +83,7 @@ const projects = [
     title: '屯門教育設施擴建',
     category: '公共建築',
     year: '2018',
-    location: '香港屯門',
+    location: '越南屯門',
     description: '為教育機構提供擴建服務，增加教學空間和設施，提升教育環境質量。',
     image: '/placeholder-project.jpg',
     highlights: [
@@ -183,7 +183,7 @@ const filteredProjects = computed(() => {
                 <div class="w-12 h-12 bg-gray-200 rounded-full mr-4"></div>
                 <div>
                   <h4 class="font-bold">陳小姐</h4>
-                  <p class="text-gray-500">香港中心商業大廈</p>
+                  <p class="text-gray-500">越南中心商業大廈</p>
                 </div>
               </div>
               <p class="text-gray-600 italic">
