@@ -58,7 +58,7 @@ export default defineNuxtConfig({
         lang: 'zh-Hant',
       },
       meta: [
-        { name: 'description', content: 'KCIS 企业形象网站' }
+        { name: 'description', content: 'KCIS 越南專業工程服務' }
       ],
       link: [
         { rel: 'icon', type: 'image/png', href: '/favicon.png' }
