@@ -54,7 +54,7 @@ const projects = [
 </script>
 
 <template>
-  <div>
+  <div v-if="false">
     <!-- 首页横幅 -->
     <section class="bg-gray-100 py-20">
       <div class="container mx-auto px-4">
