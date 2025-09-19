@@ -1,26 +1,109 @@
 <script setup>
+import { onMounted } from 'vue'
+import ImageWithFallback from '~/components/ui/ImageWithFallback.vue'
+
 definePageMeta({
   layout: 'default',
 })
 useHead({
   title: useI18n().t('nav.services')
 })
+
+// 用于追踪当前活动菜单项
+const activeSection = ref('architecture-design');
+
+// 处理导航点击事件
+const scrollToSection = (sectionId) => {
+  const element = document.getElementById(sectionId);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+    activeSection.value = sectionId;
+  }
+};
+
+// 监听滚动事件以更新活动菜单项
+const setupScrollSpy = () => {
+  if (process.client) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            activeSection.value = entry.target.id;
+          }
+        });
+      },
+      { threshold: 0.5 } // 当元素有50%进入视口时触发
+    );
+
+    // 监听所有内容区域
+    const sections = document.querySelectorAll('section[id]');
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  }
+};
+
+// 在组件挂载后设置滚动监听
+onMounted(() => {
+  setupScrollSpy();
+});
+
 // 导航菜单数据
 const navigationItems = [
   {
-    id: "company-story",
-    title: "公司創立故事",
-    icon: "i-heroicons-sparkles",
+    id: "architecture-design",
+    title: "建築及室內設計",
+    icon: "i-heroicons-home",
+    children: [
+      { title: "設計方案檢討與優化建議", image: "https://via.placeholder.com/500x300", alt: "住宅建築設計" },
+      { title: "細部設計繪製與施工建議", image: "https://via.placeholder.com/500x300", alt: "商業空間設計" },
+      { title: "室內與展場空間設計", image: "https://via.placeholder.com/500x300", alt: "辦公空間設計" },
+      { title: "工業廠房與住宅建築設計", image: "https://via.placeholder.com/500x300", alt: "景觀設計" }
+    ]
   },
   {
-    id: "company-history",
-    title: "公司成立史",
-    icon: "i-heroicons-clock",
+    id: "engineering-consulting",
+    title: "工程顧問",
+    icon: "i-heroicons-academic-cap",
+    children: [
+      { title: "招標文件編制", image: "https://via.placeholder.com/500x300", alt: "結構工程" },
+      { title: "協助採購招標", image: "https://via.placeholder.com/500x300", alt: "機電工程" },
+      { title: "工程顧問諮詢", image: "https://via.placeholder.com/500x300", alt: "土木工程" },
+      { title: "政府許可申請及法規合規諮詢", image: "https://via.placeholder.com/500x300", alt: "環境工程" }
+    ]
   },
   {
-    id: "team-introduction",
-    title: "團隊介紹",
-    icon: "i-heroicons-user-group",
+    id: "project-management",
+    title: "專案管理",
+    icon: "i-heroicons-clipboard-document-list",
+    children: [
+      { title: "專案整合規劃與管理", image: "https://via.placeholder.com/500x300", alt: "進度管理" },
+      { title: "合約協調與管理", image: "https://via.placeholder.com/500x300", alt: "資源協調" },
+      { title: "工程技術諮詢管理", image: "https://via.placeholder.com/500x300", alt: "質量控制" },
+      // { title: "風險管理", image: "https://via.placeholder.com/500x300", alt: "風險管理" }
+    ]
+  },
+  {
+    id: "cost-control",
+    title: "成本控管",
+    icon: "i-heroicons-banknotes",
+    children: [
+      { title: "單價分析與成本估算", image: "https://via.placeholder.com/500x300", alt: "預算規劃" },
+      { title: "工程量計算與預算編列", image: "https://via.placeholder.com/500x300", alt: "成本估算" },
+      { title: "工程請款計價審核", image: "https://via.placeholder.com/500x300", alt: "支出監控" },
+      { title: "竣工結算與成本控管", image: "https://via.placeholder.com/500x300", alt: "價值工程" }
+    ]
+  },
+  {
+    id: "construction-supervision",
+    title: "施工監造",
+    icon: "i-heroicons-wrench-screwdriver",
+    children: [
+      { title: "施工進度管控", image: "https://via.placeholder.com/500x300", alt: "施工現場監督" },
+      { title: "現場施工監督與品質管控", image: "https://via.placeholder.com/500x300", alt: "品質檢驗" },
+      { title: "隱蔽工程檢查與驗收", image: "https://via.placeholder.com/500x300", alt: "安全管理" },
+      { title: "安全管理與跨單位協調", image: "https://via.placeholder.com/500x300", alt: "竣工驗收" }
+    ]
   },
 ];
 // 服务项目数据
@@ -109,22 +192,20 @@ const processes = [
                 <button
                   v-for="item in navigationItems"
                   :key="item.id"
+                  :class="[
+                    'flex items-center px-3 py-2 w-full text-left rounded-lg transition-colors',
+                    activeSection === item.id 
+                      ? 'bg-red-50 text-red-600 font-medium' 
+                      : 'text-gray-700 hover:bg-red-50 hover:text-red-600'
+                  ]"
                   @click="scrollToSection(item.id)"
-                  class="w-full flex items-center px-4 py-3 text-left rounded-lg transition-colors group"
-                  :class="
-                    activeSection === item.id
-                      ? 'bg-red-600 text-white'
-                      : 'hover:bg-red-50 hover:text-red-600'
-                  "
                 >
                   <UIcon
                     :name="item.icon"
-                    class="w-5 h-5 mr-3 transition-colors"
-                    :class="
-                      activeSection === item.id
-                        ? 'text-white'
-                        : 'text-gray-400 group-hover:text-red-600'
-                    "
+                    :class="[
+                      'w-5 h-5 mr-2',
+                      activeSection === item.id ? 'text-red-600' : 'text-gray-600'
+                    ]"
                   />
                   <span class="font-medium">{{ item.title }}</span>
                 </button>
@@ -135,136 +216,36 @@ const processes = [
           <!-- 右侧内容区域 -->
           <main class="lg:w-3/4">
             <div class="space-y-16">
-              <!-- 公司创立故事 -->
-              <section id="company-story" class="scroll-mt-8">
+              <!-- 使用v-for循环生成每个服务类别的内容 -->
+              <section 
+                v-for="item in navigationItems" 
+                :key="item.id"
+                :id="item.id" 
+                class="scroll-mt-8"
+              >
                 <div class="bg-white rounded-lg shadow-md p-8">
-                  <h2
-                    class="text-3xl font-bold mb-8 text-gray-800 flex items-center"
-                  >
+                  <h2 class="text-3xl font-bold mb-8 text-gray-800 flex items-center">
                     <UIcon
-                      name="i-heroicons-sparkles"
+                      :name="item.icon"
                       class="w-8 h-8 mr-3 text-red-600"
                     />
-                    公司創立故事
+                    {{ item.title }}
                   </h2>
 
-                  <div class="prose prose-lg max-w-none">
-                    <p class="text-gray-700 mb-6 leading-relaxed">
-                      創辦人的話：
-                    </p>
-
-                    <p class="text-gray-700 mb-6 leading-relaxed">
-                      KCIS 的誕生創立 KCIS，不是為了趕上市場，而是為了改變它。
-                      我長期走在越南各地的工地與會議室之間，看到無數建築拔地而起，也看到太多品質失控、責任模糊、角色被邊緣化的工程現場。圖紙與現場不符，預算不透明，監造成了「在不在都一樣」的裝飾。
-                    </p>
-
-                    <p class="text-gray-700 mb-6 leading-relaxed">
-                      我常想，這真的是工程應有的樣子嗎？
-                      我問自己：「如果我們能堅持把每件事做對，會不會讓工程變得不一樣？」
-                      這個念頭，成為我創立 KCIS 的起點。
-                      我們相信，品質不是用錢堆出來的，而是來自
-                      堅持（Keep）——對細節的堅持、對原則的堅持。我們也相信，監造人不能只是站在一邊看，而要有
-                      自信（Confidence）
-                      提出專業判斷，甚至幫助業主做決定。在這個變化快速的時代，我們更不能墨守成規，創新（Innovation）
-                      是我們與錯誤對抗的工具。而一切的核心，都是為了
-                      服務（Server）——服務業主、服務建築本身，也服務未來可能在這棟建築裡生活、工作的人。
-                    </p>
-
-                    <p class="text-gray-700 mb-6 leading-relaxed">
-                      KCIS
-                      是這四個詞的縮寫，也是一種信念的縮寫。KCIS，不追求最大，但我們選擇最正直的那條路。用四個字——Keep,
-                      Confidence, Innovation,
-                      Serve，我們蓋出每一個值得信任的工程。
-                    </p>
-                    <p>KCIS 創辦人楊博翔 Ennio</p>
-                  </div>
-                </div>
-              </section>
-
-              <!-- 公司成立史 -->
-              <section id="company-history" class="scroll-mt-8">
-                <div class="bg-white rounded-lg shadow-md p-8">
-                  <h2
-                    class="text-3xl font-bold mb-8 text-gray-800 flex items-center"
-                  >
-                    <UIcon
-                      name="i-heroicons-clock"
-                      class="w-8 h-8 mr-3 text-red-600"
-                    />
-                    公司成立史
-                  </h2>
-
-                  <div class="space-y-8">
-                    <div
-                      v-for="(milestone, index) in milestones"
-                      :key="index"
-                      class="flex items-start"
+                  <div v-if="item.children" class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div 
+                      v-for="(child, childIndex) in item.children" 
+                      :key="`${item.id}-${childIndex}`"
+                      class="mb-6 md:mb-0"
                     >
-                      <div class="flex-shrink-0 w-20 text-center mr-6">
-                        <div
-                          class="bg-red-600 text-white rounded-full w-16 h-16 flex items-center justify-center font-bold text-sm mx-auto mb-2"
-                        >
-                          {{ milestone.year }}
+                      <div class="bg-gray-100 p-4 rounded-lg">
+                        <div class="mb-4 rounded-lg overflow-hidden h-48">
+                          <ImageWithFallback
+                            :src="child.image"
+                            :alt="child.alt"
+                          />
                         </div>
-                        <div
-                          v-if="index < milestones.length - 1"
-                          class="w-px h-16 bg-gray-300 mx-auto"
-                        ></div>
-                      </div>
-                      <div class="flex-grow">
-                        <div class="bg-gray-50 p-6 rounded-lg">
-                          <h3 class="text-xl font-bold mb-3 text-gray-800">
-                            {{ milestone.title }}
-                          </h3>
-                          <p class="text-gray-700 leading-relaxed">
-                            {{ milestone.description }}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </section>
-
-              <!-- 团队介绍 -->
-              <section id="team-introduction" class="scroll-mt-8">
-                <div class="bg-white rounded-lg shadow-md p-8">
-                  <h2
-                    class="text-3xl font-bold mb-8 text-gray-800 flex items-center"
-                  >
-                    <UIcon
-                      name="i-heroicons-user-group"
-                      class="w-8 h-8 mr-3 text-red-600"
-                    />
-                    團隊介紹
-                  </h2>
-
-                  <div
-                    class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6"
-                  >
-                    <div
-                      v-for="(member, index) in team"
-                      :key="index"
-                      class="bg-gray-50 rounded-lg overflow-hidden hover:shadow-md transition-shadow"
-                    >
-                      <div
-                        class="h-48 bg-gray-200 flex items-center justify-center"
-                      >
-                        <UIcon
-                          name="i-heroicons-user-circle"
-                          class="w-16 h-16 text-gray-400"
-                        />
-                      </div>
-                      <div class="p-6">
-                        <h3 class="text-lg font-bold mb-2 text-gray-800">
-                          {{ member.name }}
-                        </h3>
-                        <p class="text-red-600 font-medium mb-3 text-sm">
-                          職位: {{ member.title }}
-                        </p>
-                        <p class="text-gray-600 text-sm leading-relaxed">
-                          專長: {{ member.description }}
-                        </p>
+                        <h3 class="font-semibold text-gray-800 text-center">{{ child.title }}</h3>
                       </div>
                     </div>
                   </div>

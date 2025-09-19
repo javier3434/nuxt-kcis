@@ -58,7 +58,7 @@ export default defineNuxtConfig({
         lang: 'zh-Hant',
       },
       meta: [
-        { name: 'description', content: 'KCIS 越南專業工程服務' }
+        { name: 'description', content: 'KCIS 工程顧問 | 越南專業工程監造與顧問服務，提供廠房建設、機電監理、法規合規與專案管理，協助台資與中資企業在越南推動工業工程專案' }
       ],
       link: [
         { rel: 'icon', type: 'image/png', href: '/favicon.png' }

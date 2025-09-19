@@ -43,10 +43,10 @@ onUnmounted(() => {
 const navItems = computed(() => [
   { name: 'nav.home', path: localePath('/'), active: route.path === localePath('/') },
   { name: 'nav.about', path: localePath('/about'), active: route.path.startsWith(localePath('/about')) },
-  // { name: 'nav.services', path: localePath('/services'), active: route.path.startsWith(localePath('/services')) },
+  { name: 'nav.services', path: localePath('/services'), active: route.path.startsWith(localePath('/services')) },
   // { name: 'nav.projects', path: localePath('/projects'), active: route.path.startsWith(localePath('/projects')) },
   // { name: 'nav.info', path: localePath('/info'), active: route.path.startsWith(localePath('/info')) },
-  // { name: 'nav.careers', path: localePath('/careers'), active: route.path.startsWith(localePath('/careers')) },
+  { name: 'nav.careers', path: localePath('/careers'), active: route.path.startsWith(localePath('/careers')) },
   { name: 'nav.contact', path: localePath('/contact'), active: route.path.startsWith(localePath('/contact')) },
 ])
 

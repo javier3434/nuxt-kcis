@@ -13,127 +13,30 @@ const jobs = [
     title: '高級工程師',
     department: '工程部',
     type: '全職',
-    location: '越南',
-    description: '負責複雜工程項目的設計、實施和管理，提供專業技術支持和解決方案。',
+    location: '南越',
+    publishDate: '2025-09-20',
+    description: '負責主管行程安排聯繫、相關秘書行政事務及主管交辦任務，不用出差。',
+    // jobDuties: [
+    //   '設計和實施複雜的工程解決方案',
+    //   '提供技術指導和支持',
+    //   '參與項目規劃和執行',
+    //   '進行技術評估和報告',
+    //   '維護和更新技術文檔'
+    // ],
     requirements: [
-      '相關專業學士學位或以上學歷',
-      '5年以上相關工作經驗',
-      '熟悉行業標準和技術規範',
-      '良好的項目管理和團隊協作能力',
-      '優秀的溝通和解決問題的能力'
+      '碩士畢業',
+      '具公司總經理級(含)以上秘書工作經驗5年以上者',
+      '熟悉OFFICE文書作業軟體',
+      '諳國、台語；英文多益成績需達700分以上',
+      '工作積極、細心，具良好溝通能力',
     ],
     benefits: [
-      '具競爭力的薪酬待遇',
-      '完善的醫療保險',
-      '專業發展機會',
-      '年度獎金'
+      '月薪8.4萬元',
+      '試用期滿9萬元以上',
+      '年終獎金3個月或以上',
+      '有相關經驗依年資核加經驗薪或面議'
     ]
   },
-  {
-    id: 2,
-    title: '項目經理',
-    department: '項目管理部',
-    type: '全職',
-    location: '越南',
-    description: '負責管理和協調工程項目，確保項目按時、按質、按預算完成。',
-    requirements: [
-      '項目管理相關學位',
-      '項目管理專業認證優先',
-      '3年以上項目管理經驗',
-      '出色的組織和協調能力',
-      '良好的溝通和談判技巧'
-    ],
-    benefits: [
-      '具競爭力的薪酬待遇',
-      '完善的醫療保險',
-      '專業發展機會',
-      '年度獎金'
-    ]
-  },
-  {
-    id: 3,
-    title: '市場專員',
-    department: '市場部',
-    type: '全職',
-    location: '越南',
-    description: '負責市場推廣活動的策劃和執行，提升公司品牌知名度和市場份額。',
-    requirements: [
-      '市場營銷或相關專業學位',
-      '2年以上市場推廣經驗',
-      '良好的創意思維和策劃能力',
-      '熟悉數字營銷工具和策略',
-      '優秀的文案撰寫能力'
-    ],
-    benefits: [
-      '具競爭力的薪酬待遇',
-      '完善的醫療保險',
-      '專業發展機會',
-      '年度獎金'
-    ]
-  },
-  {
-    id: 4,
-    title: '人力資源專員',
-    department: '人力資源部',
-    type: '全職',
-    location: '越南',
-    description: '負責招聘、培訓、績效管理等人力資源工作，支持公司人才發展策略。',
-    requirements: [
-      '人力資源管理或相關專業學位',
-      '2年以上人力資源工作經驗',
-      '熟悉越南勞工法規',
-      '良好的組織和協調能力',
-      '優秀的人際交往能力'
-    ],
-    benefits: [
-      '具競爭力的薪酬待遇',
-      '完善的醫療保險',
-      '專業發展機會',
-      '年度獎金'
-    ]
-  },
-  {
-    id: 5,
-    title: '財務助理',
-    department: '財務部',
-    type: '全職',
-    location: '越南',
-    description: '協助財務團隊處理日常財務工作，包括記賬、報表編製、發票處理等。',
-    requirements: [
-      '會計或財務相關專業學位',
-      '1年以上財務工作經驗',
-      '熟悉基本會計原則和實務',
-      '良好的數據分析能力',
-      '細心、責任心強'
-    ],
-    benefits: [
-      '具競爭力的薪酬待遇',
-      '完善的醫療保險',
-      '專業發展機會',
-      '年度獎金'
-    ]
-  },
-  {
-    id: 6,
-    title: '技術支持實習生',
-    department: '技術部',
-    type: '實習',
-    location: '越南',
-    description: '協助技術團隊處理日常工作，參與項目實施，獲取實際工作經驗。',
-    requirements: [
-      '相關專業在讀學生',
-      '具備基本專業知識',
-      '學習能力強，態度積極',
-      '良好的團隊合作精神',
-      '基本的電腦技能'
-    ],
-    benefits: [
-      '有競爭力的實習津貼',
-      '實踐學習機會',
-      '專業指導',
-      '表現優秀者有機會轉正'
-    ]
-  }
 ]
 
 // 职位类型筛选
@@ -216,7 +119,9 @@ const filteredJobs = computed(() => {
               </div>
               <div>
                 <h3 class="text-lg font-semibold mb-2">具競爭力的薪酬</h3>
-                <p class="text-gray-600">我們提供行業內具競爭力的薪酬待遇，認可員工的貢獻和價值。</p>
+                <p class="text-gray-600">
+                  我們提供行業內具競爭力的薪酬待遇，認可員工的貢獻和價值。
+                </p>
               </div>
             </div>
           </div>
@@ -228,7 +133,9 @@ const filteredJobs = computed(() => {
               </div>
               <div>
                 <h3 class="text-lg font-semibold mb-2">醫療保險</h3>
-                <p class="text-gray-600">我們為員工提供全面的醫療保險計劃，確保員工的健康與福祉。</p>
+                <p class="text-gray-600">
+                  我們為員工提供全面的醫療保險計劃，確保員工的健康與福祉。
+                </p>
               </div>
             </div>
           </div>
@@ -240,7 +147,9 @@ const filteredJobs = computed(() => {
               </div>
               <div>
                 <h3 class="text-lg font-semibold mb-2">職業發展</h3>
-                <p class="text-gray-600">我們提供多樣化的培訓和發展機會，幫助員工實現職業目標。</p>
+                <p class="text-gray-600">
+                  我們提供多樣化的培訓和發展機會，幫助員工實現職業目標。
+                </p>
               </div>
             </div>
           </div>
@@ -252,7 +161,9 @@ const filteredJobs = computed(() => {
               </div>
               <div>
                 <h3 class="text-lg font-semibold mb-2">工作生活平衡</h3>
-                <p class="text-gray-600">我們鼓勵員工保持健康的工作生活平衡，提供彈性工作安排。</p>
+                <p class="text-gray-600">
+                  我們鼓勵員工保持健康的工作生活平衡，提供彈性工作安排。
+                </p>
               </div>
             </div>
           </div>
@@ -283,7 +194,7 @@ const filteredJobs = computed(() => {
           </div>
         </div>
         
-        <!-- 职位列表 -->
+        <!-- 職位列表 -->
         <div class="space-y-6">
           <div 
             v-for="job in filteredJobs" 
@@ -296,10 +207,18 @@ const filteredJobs = computed(() => {
                 <span class="bg-red-100 text-red-600 text-sm px-2 py-1 rounded">{{ job.department }}</span>
                 <span class="bg-blue-100 text-blue-600 text-sm px-2 py-1 rounded">{{ job.type }}</span>
                 <span class="bg-green-100 text-green-600 text-sm px-2 py-1 rounded">{{ job.location }}</span>
+                <span class="bg-yellow-100 text-yellow-600 text-sm px-2 py-1 rounded">{{ job.publishDate }}</span>
               </div>
             </div>
             
             <p class="text-gray-600 mb-4">{{ job.description }}</p>
+            
+            <div class="mb-4">
+              <h4 class="font-semibold mb-2">工作內容：</h4>
+              <ul class="list-disc list-inside text-gray-600 space-y-1">
+                <li v-for="(duty, index) in job.jobDuties" :key="index">{{ duty }}</li>
+              </ul>
+            </div>
             
             <div class="mb-4">
               <h4 class="font-semibold mb-2">要求：</h4>
