@@ -2,8 +2,22 @@
 definePageMeta({
   layout: 'default',
 })
-useHead({
-  title: useI18n().t('nav.home')
+
+const { t } = useI18n()
+const route = useRoute()
+
+// 增強首頁SEO
+useSeoMeta({
+  title: t('nav.home') + ' - KCIS',
+  description: 'KCIS 工程顧問 | 越南專業工程監造與顧問服務，提供廠房建設、機電監理、法規合規與專案管理',
+  ogTitle: t('nav.home') + ' - KCIS',
+  ogDescription: 'KCIS 工程顧問 | 越南專業工程監造與顧問服務，提供廠房建設、機電監理、法規合規與專案管理',
+  ogImage: 'https://kcis.com/logo-share.jpg',
+  ogUrl: `https://kcis.com${route.fullPath}`,
+  twitterTitle: t('nav.home') + ' - KCIS',
+  twitterDescription: 'KCIS 工程顧問 | 越南專業工程監造與顧問服務',
+  twitterCard: 'summary_large_image',
+  twitterImage: 'https://kcis.com/logo-share.jpg'
 })
 
 // 首页服务项目数据

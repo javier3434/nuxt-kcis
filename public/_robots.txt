@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Content-Usage: / train-ai=y
+
+Sitemap: https://kcis.com/sitemap.xml

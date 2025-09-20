@@ -15,6 +15,8 @@ export default defineNuxtConfig({
     '@nuxt/test-utils',
     '@nuxt/ui',
     '@nuxtjs/i18n',
+    '@nuxtjs/sitemap',
+    '@nuxtjs/seo'
   ],
 
   i18n: {
@@ -27,7 +29,8 @@ export default defineNuxtConfig({
         code: 'zh-Hant',
         name: '繁體中文',
         file: 'zh-Hant.json',
-        iso: 'zh-HK'
+        iso: 'zh-TW',
+        isCatchallLocale: true
       },
       {
         code: 'en',
@@ -42,10 +45,13 @@ export default defineNuxtConfig({
         iso: 'vi-VN'
       }
     ],
+    baseUrl: 'https://kcis.com',
     detectBrowserLanguage: {
       useCookie: true,
       cookieKey: 'i18n_locale',
-      redirectOn: 'root'
+      redirectOn: 'root',
+      alwaysRedirect: true,
+      cookieSecure: true
     },
   },
 
@@ -53,15 +59,27 @@ export default defineNuxtConfig({
     head: {
       charset: 'utf-8',
       viewport: 'width=device-width, initial-scale=1',
-      title: 'KCIS',
+      title: 'KCIS - 專業工程與建築顧問服務',
       htmlAttrs: {
         lang: 'zh-Hant',
       },
       meta: [
-        { name: 'description', content: 'KCIS 工程顧問 | 越南專業工程監造與顧問服務，提供廠房建設、機電監理、法規合規與專案管理，協助台資與中資企業在越南推動工業工程專案' }
+        { name: 'description', content: 'KCIS 工程顧問 | 越南專業工程監造與顧問服務，提供廠房建設、機電監理、法規合規與專案管理，協助台資與中資企業在越南推動工業工程專案' },
+        { name: 'keywords', content: '工程顧問,建築設計,專案管理,成本控管,施工監造,越南,台資企業,工業工程' },
+        { property: 'og:title', content: 'KCIS - 專業工程與建築顧問服務' },
+        { property: 'og:description', content: 'KCIS 工程顧問 | 越南專業工程監造與顧問服務，提供廠房建設、機電監理、法規合規與專案管理，協助台資與中資企業在越南推動工業工程專案' },
+        { property: 'og:type', content: 'website' },
+        { property: 'og:url', content: 'https://kcis.com' },
+        { property: 'og:image', content: 'https://kcis.com/logo-share.jpg' },
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:title', content: 'KCIS - 專業工程與建築顧問服務' },
+        { name: 'twitter:description', content: 'KCIS 工程顧問 | 越南專業工程監造與顧問服務' },
+        { name: 'robots', content: 'index, follow' },
+        { name: 'format-detection', content: 'telephone=no' }
       ],
       link: [
-        { rel: 'icon', type: 'image/png', href: '/favicon.png' }
+        { rel: 'icon', type: 'image/png', href: '/favicon.png' },
+        { rel: 'canonical', href: 'https://kcis.com' }
       ]
     }
   },

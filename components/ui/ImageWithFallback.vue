@@ -4,6 +4,8 @@
     <div 
       v-if="isLoading" 
       class="absolute inset-0 bg-gray-100 flex items-center justify-center"
+      :style="{ width, height }"
+      role="presentation"
     >
       <div class="animate-pulse w-full h-full bg-gray-200"></div>
     </div>
@@ -15,7 +17,13 @@
       class="w-full h-full object-cover transition-opacity duration-300"
       :class="{'opacity-0': isLoading, 'opacity-100': !isLoading && !imageError}"
       v-show="!imageError"
-      loading="lazy"
+      :loading="eager ? 'eager' : 'lazy'" 
+      :fetchpriority="eager ? 'high' : 'auto'"
+      :width="imageWidth"
+      :height="imageHeight"
+      decoding="async"
+      :srcset="srcset"
+      :sizes="sizes"
       @error="handleImageError"
       @load="handleImageLoaded"
     />
@@ -24,6 +32,8 @@
     <div 
       v-show="imageError" 
       class="absolute inset-0 bg-gray-200 flex items-center justify-center transition-opacity duration-300"
+      :style="{ width, height }"
+      role="presentation"
     >
       <div class="text-gray-400 flex flex-col items-center">
         <UIcon name="i-heroicons-photo" class="w-12 h-12 mb-2" />
@@ -49,7 +59,7 @@ const props = defineProps({
     type: String,
     default: ''
   },
-  // 可以設置圖片自定義寬度和高度
+  // 圖片尺寸和內容框尺寸
   width: {
     type: String,
     default: '100%'
@@ -57,6 +67,29 @@ const props = defineProps({
   height: {
     type: String,
     default: '100%'
+  },
+  // 圖片真實尺寸屬性，用於避免佈局偏移
+  imageWidth: {
+    type: [Number, String],
+    default: undefined
+  },
+  imageHeight: {
+    type: [Number, String],
+    default: undefined
+  },
+  // 是否為高優先級圖片，如英雄圖片應設為true
+  eager: {
+    type: Boolean,
+    default: false
+  },
+  // 體驗式圖片相關屬性
+  srcset: {
+    type: String,
+    default: ''
+  },
+  sizes: {
+    type: String,
+    default: ''
   }
 });
 
